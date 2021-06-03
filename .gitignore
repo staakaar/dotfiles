@@ -1,0 +1,16 @@
+"全ての階層を無視
+/*
+/.**
+
+"以下、管理対象のファイルを追記
+!/.zshrc
+!/.zshenv
+!/.vimrc
+!/.vim/
+!/.config/
+!/README.md
+!.gitignore
+!/bin/
+!/doc/
+!/doc/
+!/install.sh
