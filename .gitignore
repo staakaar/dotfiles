@@ -3,14 +3,13 @@
 /.**
 
 "以下、管理対象のファイルを追記
-!/.zshrc
-!/.zshenv
-!/.vimrc
-!/.vim/
-!/.config/
-!/README.md
+!.zshrc
+!.zshenv
+!.vimrc
+!.vim/
+!.config/
 !.gitignore
-!/bin/
-!/doc/
-!/doc/
-!/install.sh
+!bin
+!doc
+!etc
+!install.sh
