@@ -1,15 +1,16 @@
 "全ての階層を無視
 /*
-/.**
+/.*
 
 "以下、管理対象のファイルを追記
-!.zshrc
-!.zshenv
-!.vimrc
-!.vim/
-!.config/
-!.gitignore
-!bin
-!doc
-!etc
-!install.sh
+!/.zshrc
+!/.zshenv
+!/.vimrc
+!/vim
+!/.config
+!/.gitignore
+!/bin
+!/doc
+!/etc
+!/install.sh
+!/.config/nvim/.cache/dein/repos/github.com/

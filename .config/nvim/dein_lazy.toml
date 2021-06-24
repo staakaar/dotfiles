@@ -1,0 +1,21 @@
+[[plugins]]
+repo = 'fatih/vim-go'
+on_ft = 'go'
+
+[[plugins]]
+repo = 'rust-lang/rust.vim'
+on_ft = 'rust'
+
+[[plugins]]
+repo = 'pangloss/vim-javascript'
+on_ft = 'javascript'
+
+[[plugins]]
+repo = 'mxw/vim-jsx'
+on_ft = 'jsx'
+
+[[plugins]]
+repo = 'tpope/vim-endwise'
+on_ft = 'ruby'
+
+

@@ -1,0 +1,33 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+#nerd-treeのインストール
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+
+#snippet
+[[plugins]]
+repo = 'Shougo/neosnippet.vim'
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
+# toml syntax
+[[plugins]]
+repo = 'cespare/vim-toml'
+on_ft = 'toml'
+
+# color scheme
+[[plugins]]
+repo = 'christianchiarulli/nvcode-color-schemes.vim'
+hook_add = '''
+  let g:nvcode_termcolors=256
+  syntax on
+  colorscheme nvcode
+'''
+
+[[plugins]]
+repo = 'tomtom/tcomment_vim'
+
+[[plugins]]
+repo = 'guns/xterm-color-table.vim'
