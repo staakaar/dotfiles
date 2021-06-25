@@ -1,5 +1,7 @@
 source ~/.vimrc
 
+set rtp+=/usr/local/opt/fzf
+
 "dein Scripts===========================================
 if &compatible
   set nocompatible               " Be iMproved

@@ -63,6 +63,8 @@ let &cpo = s:cpo_save
 unlet s:cpo_save
 
 " vim: sw=2 ts=2 et
+" Go dep and Rust use several TOML config files that are not named with .toml.
+autocmd BufNewFile,BufRead *.toml,Gopkg.lock,Cargo.lock,*/.cargo/config,*/.cargo/credentials,Pipfile setf toml
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vim ftdetect file
 "
@@ -115,5 +117,3 @@ function! s:shouldFt(path)
 endfunction
 
 autocmd BufNewFile,BufRead *.scm call s:shouldFt(expand("%"))
-" Go dep and Rust use several TOML config files that are not named with .toml.
-autocmd BufNewFile,BufRead *.toml,Gopkg.lock,Cargo.lock,*/.cargo/config,*/.cargo/credentials,Pipfile setf toml

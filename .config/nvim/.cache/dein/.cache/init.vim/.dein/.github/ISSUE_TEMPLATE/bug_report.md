@@ -1,57 +1,32 @@
 ---
 name: Bug report
 about: Create a report to help us improve
-title: ''
-labels: bug
+title: "[Bug] "
+labels: ''
 assignees: ''
 
 ---
 
-<!--
-Before reporting please do :
-
-Update your neovim version to latest _master_.
-Update your plugin to latest version.
-Run `TSUpdate`.
-//-->
-
-**Describe the bug**
-
+### **Describe the bug**
 A clear and concise description of what the bug is.
 
-**To Reproduce**
+### **To Reproduce**
+Steps to reproduce the behavior, **Please provide a minimal piece of code to produce this issue**, along with it's filename and it's filetype detected by vim (via `:set ft?`), a piece of text is better than a picture here.  For example: 
 
-Steps to reproduce the behavior:
+File: `bug.js`, filetype=javascript
+```
+var pair = {x: 1, y: 2}
+```
 
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+Steps:
+1. Open file via `vim bug.js`
+2. See the color of `{` and `}` around text `{x: 1, y: 2}`
 
-**Expected behavior**
-
+### **Expected behavior**
 A clear and concise description of what you expected to happen.
 
-**Output of `:checkhealth nvim_treesitter`**
+### **Screenshots**
+Provide a screenshot to describe what you got.
 
-<details>
-<code>
-
-Paste the output here
-
-</code>
-</details>
-
-**Output of `nvim --version`**
-
-<details>
-<code>
-
-Paste the output here
-
-</code>
-</details>
-
-**Additional context**
-
-Add any other context about the problem here.
+### **Additional context**
+**Are you using some third-party syntax plugins?** Add any other context about the problem here.

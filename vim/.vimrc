@@ -1,17 +1,16 @@
 set nocompatible
 
-filetype plugin indent on
-
-" basic vim config
 set autoindent
 
 set smartindent
 
-set shortmess+=I " disable startup message
+set shortmess+=I 
 
-set nu " number lines
+set smarttab
 
-set rnu " relative line numbering
+set nu
+
+set rnu
 
 set incsearch " incremental search (as string is being typed)
 
@@ -52,44 +51,27 @@ set softtabstop=4
 
 set cursorline
 
-" syntax highlight setting
-syntax on
+autocmd InsertEnter,InsertLeave * set cursorline!
 
-" smart case-sensitive search
 set ignorecase
 
 set smartcase
 
-" tab completion for files/bufferss
 set wildmode=longest,list
 
 set wildmenu
 
 set mouse+=a " enable mouse mode (scrolling, selection, etc)
 if &term =~ '^screen'
-    " tmux knows the extended mouse mode
     set ttymouse=xterm2
 endif
 
 " disable audible bell
 set noerrorbells visualbell t_vb=
 
-" open new split panes to right and bottom, which feels more natural
-set splitbelow
-set splitright
+set noswapfile
 
-"status line git branch
-"set statusline+=%{fugitive#statusline()}
-
-"display file relative path title bar
-set title
-
-" quicker window movement
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
 "insert mode emacs key binding
-
 imap <silent> <C-P> <UP>
 imap <silent> <C-N> <Down>
 imap <silent> <C-B> <Left>
@@ -102,11 +84,20 @@ imap { {}<LEFT>
 imap [ []<LEFT>
 imap ( ()<LEFT>
 
+"window split key binding
+nnoremap sj <C-w>j
+nnoremap sk <C-w>k
+nnoremap sl <C-w>l
+nnoremap sh <C-w>h
+nnoremap ss :<C-u>sp<CR><C-w>j
+nnoremap sv :<C-u>vs<CR><C-w>l
+nnoremap Y y$
+
 " toggle relative numbering
 nnoremap <C-n> :set rnu!<CR>
 
 " nerd-tree key binding
-nnoremap <silent><C-e> :NERDTreeToggle<CR>
+nnoremap <silent><C-e>t :NERDTreeToggle<CR>
 "nerd-tree auto display to tree
 
 autocmd StdinReadPre * let s:std_in=1
@@ -114,3 +105,12 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " display hidden files
 let NERDTreeShowHidden = 1
+
+" insert mode cursorline
+if exists('$TMUX')
+  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+else
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
