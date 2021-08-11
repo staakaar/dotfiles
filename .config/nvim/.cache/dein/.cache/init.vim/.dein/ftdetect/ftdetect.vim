@@ -13,6 +13,7 @@ function! s:set_rust_filetype() abort
 endfunction
 
 " vim: set et sw=4 sts=4 ts=8:
+au BufNewFile,BufRead *.vue,*.wpy setf vue
 autocmd BufNewFile,BufRead *.flow setfiletype flow
 fun! s:SelectJavascript()
   if getline(1) =~# '^#!.*/bin/\%(env\s\+\)\?node\>'

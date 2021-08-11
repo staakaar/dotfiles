@@ -12,6 +12,9 @@ repo = 'Shougo/neosnippet.vim'
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
 
+[[plugins]]
+repo = 'Shougo/neocomplete.vim'
+
 # toml syntax
 [[plugins]]
 repo = 'cespare/vim-toml'
@@ -25,6 +28,9 @@ hook_add = '''
   syntax on
   colorscheme nvcode
 '''
+
+[[plugins]]
+repo = 'tpope/vim-surround'
 
 [[plugins]]
 repo = 'tomtom/tcomment_vim'
@@ -45,6 +51,9 @@ hook_add = '''
 #window resize
 [[plugins]]
 repo = 'simeji/winresizer'
+hook_add = '''
+let g:winresizer_start_key = '<C-T>'
+'''
 
 #fzf.vim
 [[plugins]]

@@ -128,6 +128,8 @@ alias v='vim'
 # tmux alias
 alias t="tmux"
 
+# vim default tab new
+alias vp="vim -p"
 #.zshrc read command alias
 alias szrc="source ~/.zshrc"
 #.vimrc read command alias

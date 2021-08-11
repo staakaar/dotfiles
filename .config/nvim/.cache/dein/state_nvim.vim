@@ -17,8 +17,9 @@ filetype off
   let g:closetag_xhtml_filetypes='jsx,tsx,javascript.jsx,typescript.tsx,vue'
   let g:closetag_emptyTags_caseSensitive=1
   let g:closetag_shortcut='>'
-    vnoremap ? :'<,'>TComment<CR>
+let g:winresizer_start_key = '<C-T>'
     let g:rainbow_active = 1
+    vnoremap ? :'<,'>TComment<CR>
   inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : coc#refresh()
   inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
   function! s:check_back_space() abort

@@ -19,6 +19,10 @@ repo = 'tpope/vim-endwise'
 on_ft = 'ruby'
 
 [[plugins]]
+repo = 'posva/vim-vue'
+on_ft = 'vue'
+
+[[plugins]]
 repo = 'alvan/vim-closetag'
 on_ft = ['html', 'xhtml', 'javascript', 'typescript', 'javascript.jsx', 'typescript.tsx']
 hook_add = '''
