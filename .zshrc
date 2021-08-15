@@ -66,7 +66,7 @@ export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 export LIBRAY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH
-export PATH="$PATH:$HOME/.fzf/bin"
+export PATH="/usr/local/bin/fzf:$PATH"
 
 #environment valiable fzf command
 export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
@@ -77,7 +77,6 @@ export FZF_CTRL_R_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 export FZF_CTRL_R_OPTS='--preview "bat  --color=always --style=header,grid --line-range :100 {}"'
 export FZF_ALT_C_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 export FZF_ALT_C_OPTS='--preview "bat  --color=always --style=header,grid --line-range :100 {}"'
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 ## lang setting
 export LANG=ja_JP.UTF-8
@@ -127,7 +126,8 @@ alias vim='nvim'
 alias v='vim'
 # tmux alias
 alias t="tmux"
-
+#fzf alias
+alias f="fzf"
 # vim default tab new
 alias vp="vim -p"
 #.zshrc read command alias
