@@ -5,8 +5,9 @@ eval "$(direnv hook zsh)"
 # prompt setting
 export PS1='%F{165}%~ %F{039}>%F{082}>%F{196}>%f%F{255} '
 
-## rprompt-git-setting
+# ======================Function===============================
 
+## rprompt-git-setting
 function rprompt-git-current-branch {
   local branch_name st branch_status
 
@@ -40,6 +41,28 @@ function rprompt-git-current-branch {
   echo "${branch_status}[$branch_name]"
 }
 
+## memo command
+
+memo() {
+  local MEMO_DIR="$HOME/memo"
+  mkdir -p "$MEMO_DIR"
+  local TODAY="$(date +%Y%m%d)"
+
+  vim "$MEMO_DIR/$TODAY.md"
+}
+
+## select history
+
+select-history() {
+  BUFFER=$(history -n -r 1 | fzf --query "$BUFFER")
+  CURSOR=$#BUFFER
+}
+
+zle -N select-history
+bindkey '^r' select-history
+
+# ======================Function================================
+
 setopt prompt_subst
 
 export RPROMPT='`rprompt-git-current-branch`'
@@ -56,6 +79,7 @@ export PATH="$HOME/.asdf/asdf.sh"
 CGO_ENABLED=1
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:$PATH"
 export PATH="~/.rbenv/bin:$PATH"
+export PATH="$PATH:/usr/local/Cellar/postgresql@14/14.6/bin/psql"
 export KERL_CONFIGURE_OPTIONS="--enable-debug --disable-silent-rules --without-javac --enable-shared-zlib --enable-dynamic-ssl-lib --enable-hipe --enable-sctp --enable-smp-support --enable-threads --enable-kernel-poll --enable-wx --enable-darwin-64bit --with-ssl=$(brew --prefix openssl)"
 export CFLAGS="-O2 -g -fno-stack-check"
 
@@ -67,6 +91,13 @@ export LIBRAY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH
 export PATH="/usr/local/bin/fzf:$PATH"
+export PATH="/usr/local/bin/spring:$PATH"
+export PATH="/usr/local/Cellar/node/19.4.0/bin:$PATH"
+export PATH="/usr/local:$PATH"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Contents/Home/"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home/"
+export PATH="$JAVA_HOME/bin:$PATH"
+export PATH="$HOME/.deno/bin:$PATH"
 
 #environment valiable fzf command
 export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
@@ -121,6 +152,31 @@ eval "$(gh completion -s zsh)"
 #ripgrep alias
 alias rg="rg -i"
 
+#gh alias isuue
+alias -g IS='`gh issue list | fzf | head -n 1 | cut -f1`'
+alias ghi='(){gh issue view $1 -w}'
+
+#gh alias pullrequest
+alias -g PR='`gh pr list | fzf | head -n 1 | cut -f1`'
+alias ghp='(){gh pr view $1 -w}'
+
+#git alias
+alias gst="git status"
+alias gcb="git checkout -b"
+alias gco="git checkout"
+alias gcm="git commit -m"
+alias gp="git push"
+alias gra="git remote add"
+alias gd="git add"
+alias gb="git branch"
+alias gbr="git branch -r"
+alias gr="git rebase"
+alias gri="git rebase -i"
+alias gpspo="git push --set-upstream origin"
+alias sw="git branch --all --format='%(refname:short)' | fzf | xargs git checkout"
+
+
+
 # nvim
 alias vim='nvim'
 alias v='vim'
@@ -131,6 +187,17 @@ alias f="fzf"
 # vim default tab new
 alias vp="vim -p"
 #.zshrc read command alias
-alias szrc="source ~/.zshrc"
+alias .z="source ~/.zshrc"
 #.vimrc read command alias
-alias svrc="source ~/.vimrc"
+alias .v="source ~/.vimrc"
+
+#gatsby alias
+alias gtyd="gatsby develop"
+
+#npm
+alias ni="npm install"
+alias nu="npm uninstall"
+
+alias vz="vim ~/.zshrc"
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"

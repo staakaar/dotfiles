@@ -11,3 +11,6 @@ aliases:
     co: pr checkout
     mypr: pr list -s all -a otobakataro
     prc: pr create -w
+    is: issue
+    isl: issue list
+    prl: pr list

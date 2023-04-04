@@ -7,10 +7,19 @@
 !/.zshenv
 !/.vimrc
 !/vim
-!/.config
+!/.config/alacritty
+!/.config/coc
+!/.config/configstore
+!/.config/gatsby
+!/.config/gh
+!/.config/gatsby
+!/.config/gh
+!/.config/htop
+!/.config/iterm2
+!/.config/nvim/
+/.config/nvim/.cache
 !/.gitignore
 !/bin
 !/doc
 !/etc
 !/install.sh
-/* !/.config/nvim/.cache/dein/repos/github.com */
