@@ -163,7 +163,7 @@ alias ghp='(){gh pr view $1 -w}'
 #git alias
 alias gst="git status"
 alias gcb="git checkout -b"
-alias gco="git checkout"
+alias gco="git branch --all --format='%(refname:short)' | fzf | xargs git checkout"
 alias gcm="git commit -m"
 alias gp="git push"
 alias gra="git remote add"
@@ -171,8 +171,8 @@ alias gd="git add"
 alias gb="git branch"
 alias gbr="git branch -r"
 alias gr="git rebase"
-alias gri="git rebase -i"
-alias gpspo="git push --set-upstream origin"
+alias gri="git log --oneline --pretty=format:'%h - %s' | fzf --preview 'git show {1} --name-only' | sed -e 's/-.*//g' | xargs  git rebase -i "
+alias gpsuo="git push --set-upstream origin"
 alias sw="git branch --all --format='%(refname:short)' | fzf | xargs git checkout"
 
 
