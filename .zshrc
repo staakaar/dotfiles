@@ -190,6 +190,7 @@ alias vp="vim -p"
 alias .z="source ~/.zshrc"
 #.vimrc read command alias
 alias .v="source ~/.vimrc"
+alias viz="vim ~/.zshrc"
 
 #gatsby alias
 alias gtyd="gatsby develop"
