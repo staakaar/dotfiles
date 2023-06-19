@@ -96,8 +96,12 @@ export PATH="/usr/local/Cellar/node/19.4.0/bin:$PATH"
 export PATH="/usr/local:$PATH"
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Contents/Home/"
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home/"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home/bin"
 export PATH="$JAVA_HOME/bin:$PATH"
 export PATH="$HOME/.deno/bin:$PATH"
+export GOPATH="$HOME/go"
+export PATH="$PATH:$GOPATH/bin"
+
 
 #environment valiable fzf command
 export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
@@ -131,12 +135,14 @@ setopt nolistbeep
 autoload -U compinit && compinit -u
 
 ## command alias
-alias la="ls -a"
+alias ll="exs | fzf"
+alias cdf="exs | fzf | xargs cd"
 alias du="du -h"
 alias df="df -h"
 alias tree="tree -a -I '.git'"
-alias ..="cd ../"
-alias ...="cd ../.."
+alias .="cd ../"
+alias ..="cd ../.."
+alias ...="cd ../../.."
 alias exs="exa -abghHliS"
 alias ext="exa --long --tree --binary --group --header --links --inode --blocks --all --level=3"
 alias cat="bat"
@@ -202,3 +208,4 @@ alias nu="npm uninstall"
 alias vz="vim ~/.zshrc"
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+eval "$(atuin init zsh)"

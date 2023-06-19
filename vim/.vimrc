@@ -2,6 +2,9 @@ compatible
 
 set autoindent
 
+# 数字を10進数として扱う
+set nrformats=
+
 set smartindent
 
 set shortmess+=I 
