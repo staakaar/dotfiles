@@ -22,6 +22,25 @@ if &runtimepath !~# 'dein.vim'
 endif
 
 if dein#load_state(s:dein_dir)
+  packadd vim-jetpack
+  call jetpack#begin()
+  call jetpack#add("tani/vim-jetpack")
+  call jetpack#add('junegunn/fzf.vim')
+  call jetpack#begin()
+  call jetpack#add('joshdick/onedark')
+  call jetpack#add('majutsushi/tagbar')
+  call jetpack#add('ntpeters/vim-better-whitespace')
+  call jetpack#add('majutsushi/tagbar', { 'on': 'TagbarToggle' })
+  call jetpack#add('scrooloose/nerdtree', { 'on': 'NERDTreeToggle' })
+  call jetpack#add('Yggdroot/indentLine')
+  call jetpack#add('junegunn/fzf', { 'do': {-> fzf#install()} })
+  call jetpack#add('neoclide/coc.nvim', { 'branch': 'release' })
+  call jetpack#add('neoclide/coc.nvim', { 'branch': 'master', 'do': 'yarn install --frozen-lockfile' })
+  call jetpack#add('vlime/vlime', { 'rtp': 'vim' })
+  call jetpack#add('dracula/vim', { 'as': 'dracula' })
+  call jetpack#add('tpope/vim-fireplace', { 'for': 'clojure' })
+  call jetpack#end()
+
   call dein#begin(s:dein_dir)
 
   "dein.toml, dein_layz.tomlファイルのディレクトリをセット
@@ -32,8 +51,8 @@ if dein#load_state(s:dein_dir)
 
   "遅延読み込みしたいプラグイン群
   call dein#load_toml(s:toml_dir . 'dein_lazy.toml', {'lazy': 1})
-  
-  call dein#add('nvim-treesitter/nvim-treesitter', {'merged': 0 })
+
+  "call dein#add('nvim-treesitter/nvim-treesitter', {'merged': 0 })
 
   call dein#end()
   call dein#save_state()
@@ -45,4 +64,5 @@ endif
 
 filetype plugin indent on
 syntax enable:
+colorscheme onedark
 

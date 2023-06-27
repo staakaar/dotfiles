@@ -7,7 +7,7 @@ set nrformats=
 
 set smartindent
 
-set shortmess+=I 
+set shortmess+=I
 
 set smarttab
 
@@ -101,6 +101,9 @@ nnoremap <C-N> <Down>
 
 " toggle relative numbering
 nnoremap <C-n> :set rnu!<CR>
+
+" tagBarToggle
+nmap <F8> :TagbarToggle<CR>
 
 " nerd-tree key binding
 nnoremap <silent><C-e>t :NERDTreeToggle<CR>

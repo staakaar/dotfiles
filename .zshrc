@@ -102,7 +102,6 @@ export PATH="$HOME/.deno/bin:$PATH"
 export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH/bin"
 
-
 #environment valiable fzf command
 export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
 export FZF_DEFAULT_OPT='--preview "bat --style=numbers --color=always --line-range :500 {}"'
@@ -130,8 +129,6 @@ setopt noautoremoveslash
 
 setopt nolistbeep
 
-## autojump setting
-[[ -s /Users/iwamototakayuki/.autojump/etc/profile.d/autojump.sh ]] && source /Users/iwamototakayuki/.autojump/etc/profile.d/autojump.sh
 autoload -U compinit && compinit -u
 
 ## command alias
@@ -182,7 +179,6 @@ alias gpsuo="git push --set-upstream origin"
 alias sw="git branch --all --format='%(refname:short)' | fzf | xargs git checkout"
 
 
-
 # nvim
 alias vim='nvim'
 alias v='vim'
@@ -209,3 +205,6 @@ alias vz="vim ~/.zshrc"
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 eval "$(atuin init zsh)"
+if [ -f `brew --prefix`/etc/autojump ]; then
+. `brew --prefix`/etc/autojump
+fi
