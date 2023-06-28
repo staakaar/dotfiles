@@ -109,6 +109,9 @@ nmap <F8> :TagbarToggle<CR>
 nnoremap <silent><C-e>t :NERDTreeToggle<CR>
 "nerd-tree auto display to tree
 
+"fzf-vim-command :History alias
+nmap <C-p> :History<CR>
+
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
