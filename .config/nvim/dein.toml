@@ -45,6 +45,31 @@ hook_add = '''
   colorscheme nvcode
 '''
 
+# git diff realtime
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+
+# linter
+[[plugins]]
+repo = 'dense-analysis/ale'
+
+# csv files
+[[plugins]]
+repo = 'sheerun/vim-polyglot'
+
+#tmux auto read
+[[plugins]]
+repo = 'tmux-plugins/vim-tmux-focus-events'
+
+# linter result count display status line
+[[plugins]]
+repo = 'xuyuanp/nerdtree-git-plugin'
+
+#
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+repo = 'vim-airline/vim-airline-themes'
+
 [[plugins]]
 repo = 'neoclide/coc.nvim'
 rev = 'release'
@@ -89,15 +114,17 @@ hook_add = '''
   \ call fzf#vim#grep(
   \   'rg --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
   \   <bang>0 ? fzf#vim#with_preview('up:60%')
-  \           : fzf#vim#with_preview('right:50%:hidden', '?'), 
+  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
   \   <bang>0)
 '''
+
 [[plugins]]
 repo = 'neoclide/coc.nvim'
 rev = 'release'
 build = '''
-  git checkout release 
+  git checkout release
 '''
+
 hook_add = '''
   inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
