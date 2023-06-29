@@ -24,9 +24,18 @@ endif
 if dein#load_state(s:dein_dir)
   packadd vim-jetpack
   call jetpack#begin()
-  call jetpack#add("tani/vim-jetpack")
+  call jetpack#add('tani/vim-jetpack')
   call jetpack#add('junegunn/fzf.vim')
   call jetpack#add('joshdick/onedark')
+  call jetpack#add('airblade/vim-rooter')
+  call jetpack#add('tpope/vim-fugitive')
+  call jetpack#add('airblade/vim-gitgutter')
+  call jetpack#add('sheerun/vim-polyglot')
+  call jetpack#add('dense-analysis/ale')
+  call jetpack#add('maximbaz/lightline-ale')
+  call jetpack#add('vim-airline/vim-airline')
+  call jetpack#add('vim-airline/vim-airline-themes')
+  call jetpack#add('xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' })
   call jetpack#add('neoclide/coc.nvim', { 'merge': 0, 'rev': 'release' })
   call jetpack#add('majutsushi/tagbar')
   call jetpack#add('ntpeters/vim-better-whitespace')
@@ -65,5 +74,5 @@ endif
 
 filetype plugin indent on
 syntax enable:
-colorscheme onedark
+# colorscheme onedark
 
