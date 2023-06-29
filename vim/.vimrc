@@ -2,12 +2,16 @@ compatible
 
 set autoindent
 
+set autoread
+
 # 数字を10進数として扱う
 set nrformats=
 
 set smartindent
 
 set shortmess+=I
+
+set termguicolors
 
 set smarttab
 
@@ -99,6 +103,8 @@ nnoremap Y y$
 nnoremap <C-P> <UP>
 nnoremap <C-N> <Down>
 
+"===============vim plugin settings=============
+
 " toggle relative numbering
 nnoremap <C-n> :set rnu!<CR>
 
@@ -111,6 +117,9 @@ nnoremap <silent><C-e>t :NERDTreeToggle<CR>
 
 "fzf-vim-command :History alias
 nmap <C-p> :History<CR>
+
+"git diff realtime fix
+set updatetime=100
 
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
@@ -155,7 +164,7 @@ endfunction "}}}
 
 "main execute
 let &tabline = '%!'. s:SID_PREFIX() . 'my_tabline()'
-set showtabline=2 
+set showtabline=2
 
 " Tab jump
 for n in range(1, 9)
