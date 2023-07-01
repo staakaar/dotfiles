@@ -208,3 +208,5 @@ eval "$(atuin init zsh)"
 if [ -f `brew --prefix`/etc/autojump ]; then
 . `brew --prefix`/etc/autojump
 fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

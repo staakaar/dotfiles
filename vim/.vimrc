@@ -1,4 +1,4 @@
-compatible
+set nocompatible
 
 set autoindent
 
