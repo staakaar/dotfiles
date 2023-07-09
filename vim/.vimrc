@@ -113,7 +113,9 @@ nmap <F8> :TagbarToggle<CR>
 
 " nerd-tree key binding
 nnoremap <silent><C-e>t :NERDTreeToggle<CR>
+
 "nerd-tree auto display to tree
+autocmd VimEnter * execute 'NERDTree'
 
 "fzf-vim-command :History alias
 nmap <C-p> :History<CR>
@@ -122,7 +124,7 @@ nmap <C-p> :History<CR>
 set updatetime=100
 
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " display hidden files
 let NERDTreeShowHidden = 1

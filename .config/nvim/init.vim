@@ -25,20 +25,21 @@ if dein#load_state(s:dein_dir)
   packadd vim-jetpack
   call jetpack#begin()
   call jetpack#add('tani/vim-jetpack')
-  call jetpack#add('junegunn/fzf.vim')
-  call jetpack#add('joshdick/onedark')
+  "call jetpack#add('junegunn/fzf.vim')
+  "call jetpack#add('joshdick/onedark')
   call jetpack#add('airblade/vim-rooter')
   call jetpack#add('tpope/vim-fugitive')
   call jetpack#add('airblade/vim-gitgutter')
   call jetpack#add('sheerun/vim-polyglot')
-  call jetpack#add('dense-analysis/ale')
   call jetpack#add('maximbaz/lightline-ale')
   call jetpack#add('vim-airline/vim-airline')
   call jetpack#add('vim-airline/vim-airline-themes')
   call jetpack#add('xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' })
-  call jetpack#add('neoclide/coc.nvim', { 'merge': 0, 'rev': 'release' })
-  call jetpack#add('majutsushi/tagbar')
-  call jetpack#add('nvim-treesitter/nvim-treesitter', {'merged': 0 })
+"  call jetpack#add('neoclide/coc.nvim', { 'merge': 0, 'rev': 'release' })
+"  call jetpack#add('dense-analysis/ale')
+  call jetpack#add('maximbaz/lightline-ale')
+  "call jetpack#add('majutsushi/tagbar')
+  "call jetpack#add('nvim-treesitter/nvim-treesitter', {'merged': 0 })
   call jetpack#add('christianchiarulli/nvcode-color-schemes.vim')
   call jetpack#add('nvim-treesitter/nvim-treesitter')
   call jetpack#add('ntpeters/vim-better-whitespace')
@@ -46,11 +47,13 @@ if dein#load_state(s:dein_dir)
   call jetpack#add('scrooloose/nerdtree', { 'on': 'NERDTreeToggle' })
   call jetpack#add('Yggdroot/indentLine')
   call jetpack#add('junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' })
+  call jetpack#add('SirVer/ultisnips')
+  call jetpack#add('honza/vim-snippets')
   "call jetpack#add('junegunn/fzf', { 'do': {-> fzf#install()} })
   "call jetpack#add('neoclide/coc.nvim', { 'branch': 'release' })
   "call jetpack#add('neoclide/coc.nvim', { 'branch': 'master', 'do': 'yarn install --frozen-lockfile' })
   call jetpack#add('vlime/vlime', { 'rtp': 'vim' })
-  call jetpack#add('dracula/vim', { 'as': 'dracula' })
+  "call jetpack#add('dracula/vim', { 'as': 'dracula' })
   call jetpack#add('tpope/vim-fireplace', { 'for': 'clojure' })
   call jetpack#end()
 
@@ -85,8 +88,13 @@ let g:node_host_prog = $HOME . '/.n/lib/node_modules/neovim/bin/cli.js'
 
 # formtter auto save
 let g:ale_fix_on_save = 1
-
+let g:ale_enabled = 1
+let g:ale_completion_enabled = 1
 let g:ale_fixers = {
   \   '*': ['remove_trailing_lines', 'trim_whitespace'],
   \   'python': ['black'],
   \ }
+
+let g:UltiSnipsExpandTrigger='<c-j>'
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"

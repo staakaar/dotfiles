@@ -70,12 +70,12 @@ repo = 'xuyuanp/nerdtree-git-plugin'
 repo = 'vim-airline/vim-airline'
 repo = 'vim-airline/vim-airline-themes'
 
-[[plugins]]
-repo = 'neoclide/coc.nvim'
-rev = 'release'
-on_i = 1
-merged = '0'
-hook_source = 'call coil398#init#coc#hook_source()'
+#[[plugins]]
+#repo = 'neoclide/coc.nvim'
+#rev = 'release'
+#on_i = 1
+#merged = '0'
+#hook_source = 'call coil398#init#coc#hook_source()'
 
 
 [[plugins]]
@@ -118,29 +118,29 @@ hook_add = '''
   \   <bang>0)
 '''
 
-#[[plugins]]
-#repo = 'neoclide/coc.nvim'
-#rev = 'release'
-#build = '''
-#  git checkout release
-#'''
-
-hook_add = '''
-  inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-  inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-  function! s:check_back_space() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~# '\s'
-  endfunction
-  nmap <silent> gd <Plug>(coc-definition)
-  nmap <silent> gy <Plug>(coc-type-definition)
-  nmap <silent> gi <Plug>(coc-implementation)
-  nmap <silent> gr <Plug>(coc-references)
+[[plugins]]
+repo = 'neoclide/coc.nvim'
+rev = 'release'
+build = '''
+  git checkout release
 '''
+
+#hook_add = '''
+ # inoremap <silent><expr> <TAB>
+ #     \ pumvisible() ? "\<C-n>" :
+ #    \ <SID>check_back_space() ? "\<TAB>" :
+ #    \ coc#refresh()
+ #inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+#
+#  function! s:check_back_space() abort
+#    let col = col('.') - 1
+#    return !col || getline('.')[col - 1]  =~# '\s'
+#  endfunction
+#  nmap <silent> gd <Plug>(coc-definition)
+#  nmap <silent> gy <Plug>(coc-type-definition)
+#  nmap <silent> gi <Plug>(coc-implementation)
+#  nmap <silent> gr <Plug>(coc-references)
+#'''
 
 # [[plugins]]
 # repo = 'tani/vim-jetpack'
@@ -155,3 +155,9 @@ let g:fugitive_no_mappings = 1
 hook_post_source = '''
 echom 'fugitive is loaded'
 '''
+
+[[plugins]]
+repo = 'SirVer/ultisnips'
+
+[[plugins]]
+repo = 'honza/vim-snippets'
