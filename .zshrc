@@ -69,7 +69,7 @@ export RPROMPT='`rprompt-git-current-branch`'
 
 export LS_COLORS='no=32;40:di=34;40:ln=35:so=36:pi=33:ex=31:bd=46;34:cd=104;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
 alias ls="ls -G"
-zstyle ':completion:*' list-colors "${LS_COLORS}" 
+zstyle ':completion:*' list-colors "${LS_COLORS}"
 
 #environment valiable path
 eval "$(rbenv init -)"
@@ -210,3 +210,7 @@ if [ -f `brew --prefix`/etc/autojump ]; then
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"

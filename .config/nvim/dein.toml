@@ -159,5 +159,5 @@ echom 'fugitive is loaded'
 [[plugins]]
 repo = 'SirVer/ultisnips'
 
-[[plugins]]
-repo = 'honza/vim-snippets'
+#[[plugins]]
+#repo = 'honza/vim-snippets'
