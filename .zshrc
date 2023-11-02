@@ -94,9 +94,9 @@ export PATH="/usr/local/bin/fzf:$PATH"
 export PATH="/usr/local/bin/spring:$PATH"
 export PATH="/usr/local/Cellar/node/19.4.0/bin:$PATH"
 export PATH="/usr/local:$PATH"
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Contents/Home/"
+#export JAVA_HOME="/Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Contents/Home/"
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home/"
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home/bin"
+#export JAVA_HOME="/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home/bin"
 export PATH="$JAVA_HOME/bin:$PATH"
 export PATH="$HOME/.deno/bin:$PATH"
 export GOPATH="$HOME/go"
@@ -214,3 +214,7 @@ fi
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+source <(command fx --init)
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/iwamototakayuki/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)

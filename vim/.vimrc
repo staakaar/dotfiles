@@ -115,7 +115,7 @@ nmap <F8> :TagbarToggle<CR>
 nnoremap <silent><C-e>t :NERDTreeToggle<CR>
 
 "nerd-tree auto display to tree
-autocmd VimEnter * execute 'NERDTree'
+"autocmd VimEnter * execute 'NERDTree'
 
 "fzf-vim-command :History alias
 nmap <C-p> :History<CR>

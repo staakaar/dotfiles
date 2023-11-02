@@ -50,8 +50,8 @@ hook_add = '''
 repo = 'airblade/vim-gitgutter'
 
 # linter
-[[plugins]]
-repo = 'dense-analysis/ale'
+#[[plugins]]
+#repo = 'dense-analysis/ale'
 
 # csv files
 [[plugins]]
@@ -68,6 +68,7 @@ repo = 'xuyuanp/nerdtree-git-plugin'
 #
 [[plugins]]
 repo = 'vim-airline/vim-airline'
+[[plugins]]
 repo = 'vim-airline/vim-airline-themes'
 
 #[[plugins]]
